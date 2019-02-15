@@ -11,6 +11,7 @@ namespace Repositories
     {
         public FunctionCodeRepository(PrimarySchoolsContext primarySchoolsContext) : base(primarySchoolsContext)
         {
+
         } 
     }
 }
