@@ -1,0 +1,68 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <div class="container">
+      <a class="navbar-brand">Angular Router</a>
+      <ul class="nav navbar-nav" routerLinkActive="active">
+          <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="about">About</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="courses">Courses</a></li>
+      </ul>
+  </div>
+</nav>
+
+<!-- <router-outlet></router-outlet> -->
+
+  <mat-sidenav-container class="example-container" *ngIf="shouldRun">
+    <mat-sidenav #sidenav mode="over" [(opened)]="opened" (opened)="events.push('open!')"
+                 (closed)="events.push('close!')"  style="background-color:wheat">
+
+                 <mat-toolbar-row (click)="toggleMenu()">
+     <mat-icon (click)="toggleMenu()">menu</mat-icon> Company Name
+    </mat-toolbar-row>
+      <mat-toolbar>
+    <mat-toolbar-row (click)="toggleMenu()">
+     <mat-icon>home</mat-icon> Forms
+    </mat-toolbar-row>
+
+    <mat-toolbar-row (click)="toggleMenu()">
+      <mat-icon>person</mat-icon> Users
+    </mat-toolbar-row>
+
+      <mat-toolbar-row (click)="toggleMenu()">
+      <mat-icon>dashboard</mat-icon> Dashboard
+    </mat-toolbar-row>
+
+      <mat-toolbar-row (click)="toggleMenu()">
+      <mat-icon>settings</mat-icon> Settings
+    </mat-toolbar-row>
+
+  </mat-toolbar>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+       <mat-toolbar style="background-color:wheat">
+
+   <mat-icon (click)="toggleMenu()">menu</mat-icon>
+      <!-- <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p> -->
+      <!-- <p><button mat-button (click)="sidenav.toggle()"></button></p> -->
+        Company Name
+      </mat-toolbar>
+
+      <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        The <em>best</em> pasta
+      </ng-template>
+      <h1>Best pasta restaurants</h1>
+      <p>...</p>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>thumb_down</mat-icon> The worst sushi
+      </ng-template>
+      <h1>Terrible sushi restaurants</h1>
+      <p>...</p>
+    </mat-tab>
+  </mat-tab-group>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
